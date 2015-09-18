@@ -70,9 +70,9 @@ public class LruCacheAdapter extends BaseAdapter implements OnScrollListener {
         //mAdapterView.setOnScrollListener(this);
         mBitmapCache = new LruCache<String, Bitmap>(cacheSize) {
             /**重写sizeOf方法自定义内存大小计算方法
-             * @param key
-             * @param bitmap
-             * @return
+             * @param key 键
+             * @param bitmap 位图
+             * @return 位图的字节数
              */
             @Override
             protected int sizeOf(String key, Bitmap bitmap) {
@@ -209,7 +209,6 @@ public class LruCacheAdapter extends BaseAdapter implements OnScrollListener {
     /**
      * 异步下载图片的任务。
      *
-     * @author guolin
      */
     class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
 
