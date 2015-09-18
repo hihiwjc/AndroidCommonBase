@@ -2,6 +2,7 @@ package com.hihiwjc.libs.common_libs.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
 /**
  * 基本Activity</b>
@@ -10,9 +11,21 @@ import android.os.Bundle;
  * <p>Email:hihiwjc@live.com</p>
  */
 public abstract class BaseActivity extends Activity {
+    /**
+     * Activity根视图
+     */
+    protected View mRootView;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        // TODO: 2015/9/14 0014 完成基本Activity
         super.onCreate(savedInstanceState);
+        initActivityViews();
+    }
+
+    /**
+     * 初始化Activity视图，可以在这里实例化布局，此时还未调用setContentView(int resID)方法
+     */
+    protected void initActivityViews() {
+        throw new UnsupportedOperationException("这个方法必须被重写，用于初始化Activity的视图");
     }
 }
