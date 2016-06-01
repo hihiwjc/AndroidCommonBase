@@ -1,4 +1,4 @@
-package com.hihiwjc.libs.common_libs.activities;
+package com.hihiwjc.libs.commlibs.activities;
 
 import android.app.Activity;
 import android.os.Bundle;

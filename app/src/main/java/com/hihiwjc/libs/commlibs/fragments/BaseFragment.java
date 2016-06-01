@@ -1,4 +1,4 @@
-package com.hihiwjc.libs.common_libs.fragments;
+package com.hihiwjc.libs.commlibs.fragments;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.hihiwjc.libs.common_libs.interfaces.OnFragmentInteractionListener;
 
 
 /**
@@ -22,7 +20,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      * 视图id字符串，用于OnFragmentInteractionListener中获取视图的ID
      */
     public static final String KEY_VIEW_ID = "view_id";
-    protected OnFragmentInteractionListener mListener;
+    protected FragmentInteraction mInteraction;
     protected View mRootView;
 
     public BaseFragment() {
@@ -46,17 +44,17 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     public void onClick(View v) {
         Bundle bundle = new Bundle();
         bundle.putInt(KEY_VIEW_ID, v.getId());
-        mListener.onFragmentInteraction(bundle);
+        mInteraction.onFragmentInteraction(bundle);
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            mListener = (OnFragmentInteractionListener) context;
+            mInteraction = (FragmentInteraction) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString()
-                    + " 必须实现OnFragmentInteractionListener接口！");
+                    + " 必须实现FragmentInteraction接口！");
         }
     }
 
@@ -66,5 +64,4 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         mListener = null;
         mRootView = null;
     }
-
 }

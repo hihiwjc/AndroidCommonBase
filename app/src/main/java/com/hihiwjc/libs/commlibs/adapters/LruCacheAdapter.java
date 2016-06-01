@@ -1,4 +1,4 @@
-package com.hihiwjc.libs.common_libs.adapters;
+package com.hihiwjc.libs.commlibs.adapters;
 
 import android.content.Context;
 import android.graphics.Bitmap;

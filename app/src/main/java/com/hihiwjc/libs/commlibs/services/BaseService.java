@@ -1,4 +1,4 @@
-package com.hihiwjc.libs.common_libs.services;
+package com.hihiwjc.libs.commlibs.services;
 
 import android.app.Service;
 import android.content.Intent;

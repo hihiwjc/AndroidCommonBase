@@ -1,4 +1,4 @@
-package com.hihiwjc.libs.common_libs.interfaces;
+package com.hihiwjc.libs.commlibs.interfaces;
 
 import android.os.Bundle;
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hihiwjc.libs.common_libs.utils;
+package com.hihiwjc.libs.commlibs.utils;
 
 import android.util.Log;
 
