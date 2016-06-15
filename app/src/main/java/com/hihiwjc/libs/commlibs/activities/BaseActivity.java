@@ -1,7 +1,7 @@
 package com.hihiwjc.libs.commlibs.activities;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 /**
@@ -10,7 +10,7 @@ import android.view.View;
  * <p>Author:hihiwjc</p>
  * <p>Email:hihiwjc@live.com</p>
  */
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends AppCompatActivity {
     /**
      * Activity根视图
      */

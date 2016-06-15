@@ -11,7 +11,7 @@ import android.os.IBinder;
  * <p>Author:hihiwjc</p>
  * <p>Email:hihiwjc@live.com</p>
  */
-public class BaseService extends Service {
+public abstract class BaseService extends Service {
     private Binder mBinder;
 
     public BaseService() {

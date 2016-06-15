@@ -19,6 +19,7 @@ import java.lang.reflect.Field;
  * <br/>Email:hihiwjc@live.com
  * <br/>Date:2016/5/31 0031
  * <br/>Func:Auto Scroll ViewPager
+ * <br/>Adapter: com.hihiwjc.libs.commlibs.adapters.LoopScrollViewPagerAdapter
  */
 public class AutoScrollViewPager extends ViewPager {
 
@@ -29,6 +30,7 @@ public class AutoScrollViewPager extends ViewPager {
 
     /**
      * do nothing when sliding at the last or first item
+
      **/
     public static final int SLIDE_BORDER_MODE_NONE = 0;
     /**

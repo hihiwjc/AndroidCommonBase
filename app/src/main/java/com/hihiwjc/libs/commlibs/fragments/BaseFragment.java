@@ -20,7 +20,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      * 视图id字符串，用于OnFragmentInteractionListener中获取视图的ID
      */
     public static final String KEY_VIEW_ID = "view_id";
-    protected FragmentInteraction mInteraction;
     protected View mRootView;
 
     public BaseFragment() {
@@ -44,14 +43,12 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     public void onClick(View v) {
         Bundle bundle = new Bundle();
         bundle.putInt(KEY_VIEW_ID, v.getId());
-        mInteraction.onFragmentInteraction(bundle);
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            mInteraction = (FragmentInteraction) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString()
                     + " 必须实现FragmentInteraction接口！");
@@ -61,7 +58,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
         mRootView = null;
     }
 }
