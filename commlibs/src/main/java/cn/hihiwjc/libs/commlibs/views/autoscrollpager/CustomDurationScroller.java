@@ -17,7 +17,7 @@ import android.widget.Scroller;
 public class CustomDurationScroller extends Scroller {
 
     private double scrollFactor = 1;
-    private int mDuration;
+    private int mDuration= 1600;;
 
     public CustomDurationScroller(Context context, Interpolator interpolator) {
         super(context, interpolator);
@@ -32,7 +32,6 @@ public class CustomDurationScroller extends Scroller {
 
     @Override
     public void startScroll(int startX, int startY, int dx, int dy, int duration) {
-        this.mDuration = 1600;
         super.startScroll(startX, startY, dx, dy, this.mDuration/*(int)(mDuration * scrollFactor)*/);
     }
 }
