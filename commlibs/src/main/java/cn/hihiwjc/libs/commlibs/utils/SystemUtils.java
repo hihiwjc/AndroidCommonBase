@@ -39,13 +39,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import cn.hihiwjc.libs.commlibs.utils.logger.Logger;
+
 /**
  * 系统信息工具包<br>
  * <p>Created by hihiwjc on 2015/9/14 0014.</p>
  * <p>Author:hihiwjc</p>
  * <p>Email:hihiwjc@live.com</p>
  */
-public final class SystemTool {
+public final class SystemUtils {
     /**
      * 指定格式返回当前系统时间
      */
@@ -195,7 +197,7 @@ public final class SystemTool {
             version = context.getPackageManager().getPackageInfo(
                     context.getPackageName(), 0).versionName;
         } catch (NameNotFoundException e) {
-            throw new RuntimeException(SystemTool.class.getName()
+            throw new RuntimeException(SystemUtils.class.getName()
                     + "the application not found");
         }
         return version;
@@ -210,7 +212,7 @@ public final class SystemTool {
             version = context.getPackageManager().getPackageInfo(
                     context.getPackageName(), 0).versionCode;
         } catch (NameNotFoundException e) {
-            throw new RuntimeException(SystemTool.class.getName()
+            throw new RuntimeException(SystemUtils.class.getName()
                     + "the application not found");
         }
         return version;
@@ -239,7 +241,7 @@ public final class SystemTool {
                     pkgName, PackageManager.GET_SIGNATURES);
             return hexdigest(pis.signatures[0].toByteArray());
         } catch (NameNotFoundException e) {
-            throw new RuntimeException(SystemTool.class.getName() + "the "
+            throw new RuntimeException(SystemUtils.class.getName() + "the "
                     + pkgName + "'s application not found");
         }
     }
@@ -319,7 +321,7 @@ public final class SystemTool {
                     // pkgList 得到该进程下运行的包名
                     String[] pkgList = process.pkgList;
                     for (String pkgName : pkgList) {
-                        Logger.debug("======正在杀死包名：" + pkgName);
+                        Logger.d("======正在杀死包名：" + pkgName);
                         try {
                             am.killBackgroundProcesses(pkgName);
                             count++;
@@ -330,7 +332,7 @@ public final class SystemTool {
                     }
                 }
             }
-        Logger.debug("清理了" + (getDeviceUsableMemory(cxt) - i) + "M内存");
+        Logger.d("清理了" + (getDeviceUsableMemory(cxt) - i) + "M内存");
         return count;
     }
 }

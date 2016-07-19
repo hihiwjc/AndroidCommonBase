@@ -154,7 +154,7 @@ public final class FileUtils {
      * 把uri转为File对象
      */
     public static File uri2File(Activity aty, Uri uri) {
-        if (SystemTool.getSDKVersion() < 11) {
+        if (SystemUtils.getSDKVersion() < 11) {
             // 在API11以下可以使用：managedQuery
             String[] proj = {MediaStore.Images.Media.DATA};
             @SuppressWarnings("deprecation")
